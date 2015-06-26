@@ -87,7 +87,7 @@ try:
 	
 	################################################################################ Export the VM
 	print "\n"+strftime("%a, %d %b %Y %H:%M:%S", gmtime())+" : Export of the virtual machine"
-	api.vms.get(sys.argv[1]).export(params.Action(storage_domain=api.storagedomains.get(EXPORT_DOMAIN_NAME), exclusive=1, discard_snapshots=1))
+	api.vms.get(sys.argv[1]).export(params.Action(storage_domain=api.storagedomains.get(EXPORT_DOMAIN_NAME), exclusive=1, discard_snapshots="true"))
 	print 'Waiting '
 	while api.vms.get(sys.argv[1]).status.state != 'down':
 		print "Export in progress : %s" %(api.vms.get(sys.argv[1]).status.state)
