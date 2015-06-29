@@ -15,9 +15,9 @@ import sys
 
 RHEV_URL = "https://127.0.0.1"
 RHEV_USERNAME = "admin@internal"
-RHEV_PASSWORD = "mypassword"
+RHEV_PASSWORD = ""
 
-EXPORT_DOMAIN_NAME = "My-export-domain-name"
+EXPORT_DOMAIN_NAME = "dev05-export"
 
 
 try:
@@ -87,7 +87,7 @@ try:
 	
 	################################################################################ Export the VM
 	print "\n"+strftime("%a, %d %b %Y %H:%M:%S", gmtime())+" : Export of the virtual machine"
-	api.vms.get(sys.argv[1]).export(params.Action(storage_domain=api.storagedomains.get(EXPORT_DOMAIN_NAME), exclusive=1, discard_snapshots="true"))
+	api.vms.get(sys.argv[1]).export(params.Action(storage_domain=api.storagedomains.get(EXPORT_DOMAIN_NAME), exclusive="true", discard_snapshots="true"))
 	print 'Waiting '
 	while api.vms.get(sys.argv[1]).status.state != 'down':
 		print "Export in progress : %s" %(api.vms.get(sys.argv[1]).status.state)

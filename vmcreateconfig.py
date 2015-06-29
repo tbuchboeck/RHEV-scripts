@@ -8,8 +8,8 @@ credentials = {
 
 # Define the domains that can be used by VMs depending on the cluster on which they are created
 domains_clusters = {
-	'Cluster1': [ 'StorageDomain1', 'StorageDomain2', 'StorageDomain3' ],
-	'Cluster2': [ 'StorageDomain1', 'StorageDomain2' ]
+	'BC05': [ 'StorageDomain1', 'StorageDomain2', 'StorageDomain3' ],
+#	'Cluster2': [ 'StorageDomain1', 'StorageDomain2' ]
 }
 
 # Define the domains that can be used by VMs depending on the host on which they are created
@@ -26,8 +26,8 @@ domains_hosts = {
 
 # Define defaults
 defaults = {
-	'operating_system': "rhel_6x64",
+#	'operating_system': "rhel_6x64",
 	'optimized_for': 'server',
 	# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.0/html-single/REST_API_Guide/#appe-REST_API_Guide-Timezones
-	'timezone': 'Europe/Warsaw' # (GMT+01:00) Central European Standard Time
+	'timezone': 'Europe/Vienna' # (GMT+01:00) Central European Standard Time
 }
